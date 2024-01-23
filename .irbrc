@@ -1,0 +1,2 @@
+IRB.conf[:ECHO_ON_ASSIGNMENT] = false
+IRB.conf[:USE_AUTOCOMPLETE] = false
