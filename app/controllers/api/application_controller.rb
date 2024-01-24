@@ -9,10 +9,6 @@ class Api::ApplicationController < ActionController::Base
 
   private
 
-  def valid_public_token?
-    ENV.fetch("PUBLIC_SITE_TOKEN", "") == request.headers["X-Public-Token"]
-  end
-
   def verify_authorized!
     render json: {error: "Forbidden"}, status: :forbidden unless current_account.present?
   end
