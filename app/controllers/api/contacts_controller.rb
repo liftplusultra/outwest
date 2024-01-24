@@ -1,6 +1,7 @@
 class Api::ContactsController < Api::ApplicationController
   def create
-    Contact.create(contacts_params) if verify_recaptcha && valid_public_token?
+    # TODO update to include capture of failed captchas for analytics
+    current_account.contacts.create(contacts_params) if verify_recaptcha
     render json: {status: "ok"}, status: :created
   end
 
