@@ -1,4 +1,7 @@
 class Account < ApplicationRecord
+  encrypts :recaptcha_site_key
+  encrypts :recaptcha_secret_key
+
   scope :active, -> {where(active: true)}
 
   has_many :contacts
