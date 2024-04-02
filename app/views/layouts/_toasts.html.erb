@@ -1,0 +1,5 @@
+<% %i[notice alert success].each do |flash_type| %>
+  <% if flash[flash_type] %>
+    <div data-controller="toasts" data-toasts-type-value="<%= flash_type.to_s %>" data-toasts-message-value="<%= flash[flash_type] %>"></div>
+  <% end %>
+<% end %>
