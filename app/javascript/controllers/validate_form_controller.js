@@ -17,9 +17,7 @@ export default class extends Controller {
     if (event) event.preventDefault()
 
     // Show spinner if present
-    if (this.spinnerValue) {
-      this.showSpinner()
-    }
+    if (this.spinnerValue) this.showSpinner()
 
     // Validate
     let valid = this.validateForm()
@@ -29,9 +27,7 @@ export default class extends Controller {
       this.submit()
     } else {
       // Invalid, hide spinner and enable the button again
-      if (this.spinnerValue) {
-        this.hideSpinner()
-      }
+      if (this.spinnerValue) this.hideSpinner()
       this.submitButtonTarget.disabled = false;
     }
   }

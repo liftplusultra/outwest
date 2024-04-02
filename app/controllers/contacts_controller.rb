@@ -3,7 +3,6 @@ class ContactsController < ApplicationController
     # verified = verify_recaptcha(secret_key: current_account.recaptcha_secret_key)
     # current_account.contacts.create(contacts_params.merge(verified: verified))
     Account.out_west.contacts.create(contacts_params)
-    sleep 4
     flash.now[:success] = "Thanks for reaching out. We'll get back to you soon."
 
     respond_to do |format|
