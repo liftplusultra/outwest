@@ -17,6 +17,8 @@ gem "jbuilder"
 gem "rack-cors"
 gem "recaptcha"
 gem 'dotenv-rails', groups: [:development, :test]
+gem "interactor"
+gem "twilio-ruby"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]

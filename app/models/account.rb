@@ -12,6 +12,13 @@ class Account < ApplicationRecord
 
   before_create :generate_public_token
 
+  def phone=(new_phone)
+    new_phone = new_phone.gsub("+1", "")
+    new_phone = new_phone.to_s.gsub(/[^0-9]/, '')
+
+    self[:phone] = "+1#{new_phone}"
+  end
+
   private
 
   def generate_public_token

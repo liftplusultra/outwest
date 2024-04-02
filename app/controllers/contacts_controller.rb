@@ -2,7 +2,8 @@ class ContactsController < ApplicationController
   def create
     # verified = verify_recaptcha(secret_key: current_account.recaptcha_secret_key)
     # current_account.contacts.create(contacts_params.merge(verified: verified))
-    Account.out_west.contacts.create(contacts_params)
+    contact = Account.out_west.contacts.create(contacts_params)
+    NotificationMailer.new_contact(contact: contact).deliver_now
     flash.now[:success] = "Thanks for reaching out. We'll get back to you soon."
 
     respond_to do |format|

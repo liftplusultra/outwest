@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_01_235905) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_02_040900) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_01_235905) do
     t.boolean "active", default: true
     t.string "recaptcha_site_key"
     t.string "recaptcha_secret_key"
+    t.string "phone"
+    t.string "email"
   end
 
   create_table "contacts", force: :cascade do |t|
