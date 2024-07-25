@@ -1,23 +1,42 @@
-<nav class="navbar navbar-expand-lg navbar-neon-teal py-3" data-navbar-on-scroll="data-navbar-on-scroll">
-  <div class="container">
-
-    <%= link_to root_path, class: "navbar-brand d-flex align-items-center fs-3" do %>
-      <h1 class="text-white cyber-font">W</h1>
-    <% end %>
-
-    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="bi bi-list text-white fs-4"></i></button>
-
-    <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
-      <ul class="navbar-nav mx-auto pt-2 pt-lg-0 font-base">
-        <li class="nav-item px-2" data-anchor="data-anchor"><a class="fw-bold nav-link text-white" href="#what-we-do">What we do</a></li>
-        <li class="nav-item px-2" data-anchor="data-anchor"><a class="fw-bold nav-link text-white" href="#services">Services </a></li>
-        <li class="nav-item px-2" data-anchor="data-anchor"><a class="fw-bold nav-link text-white" href="#process">Process</a></li>
-        <li class="nav-item px-2" data-anchor="data-anchor"><a class="fw-bold nav-link text-white" href="#technology">Tech</a></li>
-      </ul>
-      <form class="">
-        <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn glowy-btn-pink order-0" >Contact</a>
-      </form>
+<header class="header navbar navbar-expand-lg navbar-dark bg-dark sticky-top" data-bs-theme="dark">
+  <div class="container px-3">
+    <a href="/" class="navbar-brand pe-3">
+      <%= image_tag "logo-white.png", class: "me-3", width: 47, alt: "Out West Tech" %>
+      Out West Tech
+    </a>
+    <div id="navbarNav" class="offcanvas offcanvas-end bg-dark">
+      <div class="offcanvas-header border-bottom border-light">
+        <h5 class="offcanvas-title text-white">Menu</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <%= link_to "Services & Projects", root_path(anchor: "services"), class: "nav-link", data: {scroll: ''} %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "About Us", about_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Contact", root_path(anchor: "contact"), class: "nav-link", data: {scroll: ''} %>
+          </li>
+        </ul>
+      </div>
+      <div class="offcanvas-header border-top border-light">
+        <a href="#contact" data-scroll class="btn btn-primary w-100" target="_blank" rel="noopener">
+          <i class="bx bx-message-alt-dots fs-5 lh-1 me-1"></i>
+          Contact Us
+        </a>
+      </div>
     </div>
+
+    <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a href="#contact" data-scroll class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex" target="_blank" rel="noopener">
+      <i class="bx bx-message-alt-dots fs-5 lh-1 me-1"></i>
+      Contact Us
+    </a>
   </div>
-</nav>
+</header>

@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
   resources :contacts, only: :create
 
+  get "/about", to: "pages#about", as: :about
+
   root "pages#index"
 end
