@@ -3,7 +3,8 @@
 <p>Yo, you have a new contact request.</p>
 
 <ul>
-  <li>Name: <%= @contact.first_name %> <%= @contact.last_name %></li>
+  <li>Name: <%= @contact.name %></li>
+  <li>Service: <%= @contact.service %></li>
   <li>Email: <%= @contact.email %></li>
   <li>Message: <%= @contact.message %></li>
 </ul>
