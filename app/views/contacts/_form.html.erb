@@ -1,39 +1,43 @@
-<%= form_with(scope: :contact, url: contacts_path, id: "contact-form", data: {controller: "validate-form", validate_form_target: "form", validate_form_spinner_value: "true"}) do |f| %>
-  <div class="mb-3">
-    <%= f.label :name, class: "form-label" %>
-    <div class="row">
-      <div class="col-12 col-md-6">
-        <%= f.text_field :first_name, placeholder: "First name", class: "form-control mb-md-0 mb-1", data: {validate_form_target: "input", validate_type: "text", validate_msg: "Please enter a first name."} %>
-      </div>
-
-      <div class="col-12 col-md-6">
-        <%= f.text_field :last_name, placeholder: "Last name", class: "form-control", data: {validate_form_target: "input", validate_type: "text", validate_msg: "Please enter a last name."} %>
-      </div>
+<div data-controller="contact-form">
+  <%= form_with scope: :contact, url: contacts_path, class: "card-body needs-validation", id: "contact-form", data: { controller: "validate-form", validate_form_target: "form", validate_form_spinner_value: "true" } do |f| %>
+    <div class="mb-4">
+      <%= f.label :service, class: "form-label fs-base" %>
+      <%= f.select :service, Contact::SERVICES, { prompt: "Choose the service your interested in" }, class: "form-select form-select-lg", data: { validate_form_target: "input", validate_type: "text", validate_msg: "Please select a service." } %>
+    </div>
+    <div class="mb-4">
+      <%= f.label :first_name, "First name", class: "form-label fs-base" %>
+      <%= f.text_field :first_name, class: "form-control form-control-lg", data: { validate_form_target: "input", validate_type: "text", validate_msg: "Please enter your first name." } %>
+    </div>
+    <div class="mb-4">
+      <%= f.label :last_name, "Last name", class: "form-label fs-base" %>
+      <%= f.text_field :last_name, class: "form-control form-control-lg", data: { validate_form_target: "input", validate_type: "text", validate_msg: "Please enter your last name." } %>
+    </div>
+    <div class="mb-4">
+      <%= f.label :email, class: "form-label fs-base" %>
+      <%= f.email_field :email, class: "form-control form-control-lg", data: { validate_form_target: "input", validate_type: "text", validate_msg: "Please enter your email." } %>
+    </div>
+    <div class="mb-4 pb-2">
+      <%= f.label :message, class: "form-label fs-base" %>
+      <%= f.text_area :message, rows: 3, class: "form-control form-control-lg", placeholder: "Tell us a little about your project", data: { validate_form_target: "input", validate_type: "text", validate_msg: "Please leave us a brief message." } %>
     </div>
 
-  </div>
-  <div class="mb-3">
-    <%= f.label :email, "Email", class: "form-label" %>
-    <%= f.text_field :email, placeholder: "myemail@email.com", class: "form-control", data: {validate_form_target: "input", validate_type: "email", validate_msg: "Please enter a valid email."} %>
-  </div>
+    <div id="g-recaptcha"></div>
 
-  <div class="mb-3">
-    <%= f.label :message, class: "form-label" %>
-    <%= f.text_area :message, placeholder: "What can we help you with?", class: "form-control", rows: 3, data: {validate_form_target: "input", validate_type: "text", validate_msg: "Please leave us a message."} %>
-  </div>
+    <div class="d-flex">
 
-  <button id="submit-button"
-          type="submit"
-          class="btn glowy-btn-pink"
-          data-action="validate-form#validateAndSubmit"
-          data-turbo-submit-with="Submitting..."
-          data-validate-form-target="submitButton"
-  >Submit</button>
-
-  <div id="recaptcha"
-       class="g-recaptcha"
-       data-sitekey="6LdZS1cpAAAAACF7_-WohxgpCyQ_L4o4pxPI-2Gi"
-       data-callback="validate"
-       data-size="invisible">
-  </div>
-<% end %>
+      <button id="submit-button"
+              type="submit"
+              class="btn btn-primary shadow-primary btn-lg"
+              data-action="validate-form#validateAndSubmit"
+              data-turbo-submit-with="Submitting..."
+              data-validate-form-target="submitButton"
+              disabled="disabled"
+      >Send message
+      </button>
+      <div id="spinner" class="ms-4 spinner-border align-self-center d-none" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <%#= f.submit "Send message", class: "btn btn-primary shadow-primary btn-lg", id: "submit-button", disabled: true %>
+  <% end %>
+</div>

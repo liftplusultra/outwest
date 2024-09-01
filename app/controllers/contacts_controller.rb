@@ -2,19 +2,20 @@ class ContactsController < ApplicationController
   def create
     verified = verify_recaptcha(secret_key: ENV.fetch("RECAPTCHA_SECRET_KEY", ""))
 
-    if verified
-      contact = Account.out_west.contacts.create(contacts_params)
-      NotificationMailer.new_contact(contact: contact).deliver_now
-    end
-
     respond_to do |format|
-      format.html { redirect_to root_path, notice: "Message sent, we'll get back to you soon!" }
+      if verified && Contact.create_in_hubspot(contacts_params)
+        flash.now[:success] = "Thanks for reaching out, we'll be in contact soon."
+        format.turbo_stream
+      else
+        flash.now.alert = "We weren't able to send your message, please try again."
+        format.turbo_stream
+      end
     end
   end
 
   private
 
   def contacts_params
-    params.require(:contact).permit(:name, :service, :email, :message)
+    params.require(:contact).permit(:first_name, :last_name, :service, :email, :message)
   end
 end

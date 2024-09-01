@@ -70,30 +70,11 @@
         <p class="lead mb-2 mb-md-3">Ready to get started?</p>
         <h2 class="h1 pb-3">Don’t Hesitate to Contact Us</h2>
       </div>
-      <%= form_with scope: :contact, url: contacts_path, class: "col-lg-6 col-md-7 offset-xl-1 needs-validation", data: { turbo: false } do |f| %>
-        <div class="mb-4">
-          <%= f.label :service, class: "form-label fs-base" %>
-          <%= f.select :service, Contact::SERVICES, { prompt: "Choose the service your interested in" }, class: "form-select form-select-lg", required: true %>
-        </div>
-        <div class="row">
-
-          <div class="mb-4 col-12 col-md-6">
-            <%= f.label :name, "Full name", class: "form-label fs-base" %>
-            <%= f.text_field :name, class: "form-control form-control-lg", required: true %>
-          </div>
-          <div class="mb-4 col-12 col-md-6">
-            <%= f.label :email, class: "form-label fs-base" %>
-            <%= f.email_field :email, class: "form-control form-control-lg", required: true %>
-          </div>
-        </div>
-        <div class="mb-4 pb-2">
-          <%= f.label :message, class: "form-label fs-base" %>
-          <%= f.text_area :message, rows: 3, class: "form-control form-control-lg", placeholder: "Tell us a little about your project", required: true %>
-        </div>
-
-        <div id="g-recaptcha" class="g-recaptcha" data-sitekey="6LdZS1cpAAAAACF7_-WohxgpCyQ_L4o4pxPI-2Gi" data-action="CONTACT" data-callback="recaptchaCallback"></div>
-        <%= f.submit "Send message", class: "btn btn-primary shadow-primary btn-lg", id: "submit-button", disabled: true %>
-      <% end %>
+      <div class="col-lg-6 col-md-7 offset-xl-1">
+        <%= turbo_frame_tag "contact-form" do %>
+          <%= render partial: "contacts/form" %>
+        <% end %>
+      </div>
     </div>
 
     <!-- Pattern -->

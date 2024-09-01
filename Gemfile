@@ -19,6 +19,7 @@ gem "recaptcha"
 gem 'dotenv-rails', groups: [:development, :test]
 gem "interactor"
 gem "twilio-ruby"
+gem "hubspot-api-client"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
