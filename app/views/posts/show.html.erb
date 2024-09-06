@@ -1,3 +1,5 @@
+<% content_for :description, @post.title %>
+<% content_for :meta_image, url_for(@post.header_image.url) %>
 <%= render partial: "posts/post_crumbs" %>
 <%= render partial: "posts/post_header", locals: {post: @post} %>
 <%= render partial: "posts/header_image", locals: {post: @post} %>
