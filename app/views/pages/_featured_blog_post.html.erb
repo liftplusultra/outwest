@@ -1,0 +1,16 @@
+<div class="swiper-slide h-auto py-3" role="group" style="width: 351px; margin-right: 8px;">
+  <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
+    <div class="card-body pb-0">
+      <%= render partial: "posts/tags", locals: {post: post} %>
+      <h3 class="h4">
+        <%= link_to post.title, post_path(post), class: "stretched-link" %>
+      </h3>
+      <p class="mb-0">
+        <%= truncate(strip_tags(post.content.to_s), length: 100) %>
+      </p>
+    </div>
+    <div class="card-footer d-flex align-items-center py-4 text-muted border-top-0">
+      <span class="fs-sm text-muted"><%= post.updated_at.to_fs(:short_date) %></span>
+    </div>
+  </article>
+</div>

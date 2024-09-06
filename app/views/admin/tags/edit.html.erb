@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row mb-8">
+    <div class="col-md-12">
+      <!-- page header -->
+      <div class="d-md-flex justify-content-between align-items-center">
+        <div>
+          <h2>Editing Tag</h2>
+          <!-- breacrumb -->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><%= link_to "Dashboard", admin_dashboard_path, class: "text-inherit" %></li>
+              <li class="breadcrumb-item"><%= link_to "Tags", admin_tags_path, class: "text-inherit" %></li>
+              <li class="breadcrumb-item active" aria-current="page"><%= @tag.label %></li>
+            </ol>
+          </nav>
+        </div>
+        <!-- button -->
+        <div>
+          <%#= link_to "All Tags", admin_tags_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- form -->
+  <%= render partial: "admin/tags/form", locals: {tag: @tag} %>
+  <%#= render partial: "admin/add_ons/edit_modals", locals: {add_ons: @add_ons} %>
+  <%#= render partial: "admin/add_ons/new_modal", locals: {add_on: @add_on} %>
+</div>

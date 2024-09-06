@@ -1,4 +1,4 @@
-<header class="header navbar navbar-expand-lg navbar-dark bg-dark sticky-top" data-bs-theme="dark">
+<header class="header navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style="z-index: 99999" data-bs-theme="dark">
   <div class="container px-3">
     <a href="/" class="navbar-brand pe-3">
       <%= image_tag "logo-white.png", class: "me-3", width: 47, alt: "Out West Tech" %>
@@ -11,14 +11,31 @@
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <%= link_to "Services & Projects", root_path(anchor: "services"), class: "nav-link", data: {scroll: ''} %>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">What We Do</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li class="dropdown-item">
+                <%= link_to "Services", root_path(anchor: "services"), class: "nav-link", data: {scroll: ''} %>
+              </li>
+              <li class="dropdown-item">
+                <%= link_to "Projects", root_path(anchor: "projects"), class: "nav-link", data: {scroll: ''} %>
+              </li>
+              <li class="dropdown-item">
+                <%= link_to "Why Us?", root_path(anchor: "why-use-us"), class: "nav-link", data: {scroll: ''} %>
+              </li>
+              <li class="dropdown-item">
+                <%= link_to "Industries", root_path(anchor: "industries"), class: "nav-link", data: {scroll: ''} %>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <%= link_to "About Us", about_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Contact", root_path(anchor: "contact"), class: "nav-link", data: {scroll: ''} %>
+            <%= link_to "Our Process", about_path(anchor: "process"), class: "nav-link", data: {scroll: ''} %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Blog", posts_path, class: "nav-link" %>
           </li>
         </ul>
       </div>

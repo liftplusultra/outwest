@@ -1,0 +1,27 @@
+<%= content_tag(:tr, id: "admin-post-#{post.id}") do %>
+  <td><%= link_to truncate(post.title, length: 50), edit_admin_post_path(post), data: {turbo: false} %></td>
+  <td><%= post.featured? ? "Yes" : "No" %></td>
+  <td><%= post.published? ? "Yes" : "No" %></td>
+  <td><%= post.updated_at.to_fs(:short_datetime) %></td>
+  <td class="text-end">
+    <div class="dropdown">
+      <a href="#" class="text-reset" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-three-dots-vertical fs-5"></i>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" href="#">
+            <i class="bi bi-trash me-3"></i>
+            Delete
+          </a>
+        </li>
+        <li>
+          <%= link_to post_path(post), class: "dropdown-item", target: "_blank" do %>
+            <i class="bi bi-box-arrow-up-right me-3"></i>
+            Preview
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </td>
+<% end %>

@@ -1,0 +1,19 @@
+<div class="masonry-grid-item col pb-2 pb-lg-3 shuffle-item shuffle-item--visible">
+  <div class="card card-hover shadow-sm">
+    <div class="card-body">
+      <%= render partial: "posts/tags", locals: { post: post } %>
+      <h3 class="h4">
+        <%= link_to post_path(post), class: "d-flex align-content-center" do %>
+          <%= post.title %>
+          <i class="bx bx-right-arrow-circle text-primary fs-3 ms-2 align-self-center"></i>
+        <% end %>
+      </h3>
+      <p class="mb-3">
+        <%= truncate(strip_tags(post.content.to_s), length: 100) %>
+      </p>
+      <div class="d-flex align-items-center text-muted">
+        <div class="fs-sm pe-3 me-3"><%= post.updated_at.to_fs(:short_date) %></div>
+      </div>
+    </div>
+  </div>
+</div>

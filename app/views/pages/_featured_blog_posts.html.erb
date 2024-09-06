@@ -1,0 +1,56 @@
+<section id="featured-posts" class="border-bottom border-light py-5">
+  <div class="container py-md-3 py-lg-5">
+    <h2 class="h1 text-center pb-2">Featured Blog Posts</h2>
+    <div class="position-relative mx-md-2 px-md-5">
+
+      <!-- Slider controls (Prev / next) -->
+      <button type="button" id="news-prev" class="btn btn-prev btn-icon btn-sm position-absolute top-50 start-0 translate-middle-y mt-n4 d-inline-flex" aria-label="Previous slide" tabindex="0" aria-controls="swiper-wrapper-8d718178d2bbee13">
+        <i class="bx bx-chevron-left"></i>
+      </button>
+      <button type="button" id="news-next" class="btn btn-next btn-icon btn-sm position-absolute top-50 end-0 translate-middle-y mt-n4 d-inline-flex" aria-label="Next slide" tabindex="0" aria-controls="swiper-wrapper-8d718178d2bbee13">
+        <i class="bx bx-chevron-right"></i>
+      </button>
+
+      <!-- Swiper slider -->
+      <div class="swiper swiper-nav-onhover mx-n2 swiper-initialized swiper-horizontal swiper-pointer-events" data-swiper-options='{
+              "slidesPerView": 1,
+              "loop": true,
+              "spaceBetween": 8,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "clickable": true
+              },
+              "navigation": {
+                "prevEl": "#news-prev",
+                "nextEl": "#news-next"
+              },
+              "breakpoints": {
+                "560": {
+                  "slidesPerView": 1,
+                  "navigation": true,
+                  "navigation": {
+                "prevEl": "#news-prev",
+                "nextEl": "#news-next"
+              }
+                },
+                "670": {
+                  "slidesPerView": 2
+                },
+                "992": {
+                  "slidesPerView": 3
+                }
+              }
+            }'>
+        <div class="swiper-wrapper" id="swiper-wrapper-8d718178d2bbee13" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-1436px, 0px, 0px);">
+          <%= render partial: "pages/featured_blog_post", collection: posts, as: :post %>
+        </div>
+
+        <!-- Pagination (bullets) -->
+        <div class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4 swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+          <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 2" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span>
+        </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,9 @@
+<li class="border-bottom pb-3 mb-3">
+  <%= render partial: "posts/tags", locals: {post: post, small: true} %>
+  <h4 class="h6 mb-2">
+    <%= link_to post.title, post_path(post) %>
+  </h4>
+  <div class="d-flex align-items-center text-muted pt-1">
+    <div class="fs-xs border-end pe-3 me-3"><%= post.updated_at.to_fs(:short_date) %></div>
+  </div>
+</li>

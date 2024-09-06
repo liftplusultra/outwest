@@ -19,44 +19,47 @@
       </div>
       <div class="col-xl-6 col-lg-7 col-md-5 offset-xl-2 offset-md-1 pt-4 pt-md-1 pt-lg-0">
         <div id="footer-links" class="row">
-          <div class="col-lg-4">
-            <h6 class="mb-2">
+          <div class="col-6">
+            <h6 class="m-0">
               <a href="#useful-links" class="d-block text-dark dropdown-toggle d-lg-none py-2" data-bs-toggle="collapse">Useful Links</a>
             </h6>
             <div id="useful-links" class="collapse d-lg-block" data-bs-parent="#footer-links">
               <ul class="nav flex-column pb-lg-1 mb-lg-3">
-                <li class="nav-item">
-                  <%= link_to "Home", root_path, class: "nav-link d-inline-block px-0 pt-1 pb-2" %>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">What We Do</a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li class="dropdown-item">
+                      <%= link_to "Services", root_path(anchor: "services"), class: "nav-link", data: {scroll: ''} %>
+                    </li>
+                    <li class="dropdown-item">
+                      <%= link_to "Projects", root_path(anchor: "projects"), class: "nav-link", data: {scroll: ''} %>
+                    </li>
+                    <li class="dropdown-item">
+                      <%= link_to "Why Us?", root_path(anchor: "why-use-us"), class: "nav-link", data: {scroll: ''} %>
+                    </li>
+                    <li class="dropdown-item">
+                      <%= link_to "Industries", root_path(anchor: "industries"), class: "nav-link", data: {scroll: ''} %>
+                    </li>
+                  </ul>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "Services", root_path(anchor: "services"), class: "nav-link d-inline-block px-0 pt-1 pb-2", data: {scroll: ''} %>
+                  <%= link_to "About Us", about_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "Contact", root_path(anchor: "contact"), class: "nav-link d-inline-block px-0 pt-1 pb-2", data: {scroll: ''} %>
+                  <%= link_to "Our Process", about_path(anchor: "process"), class: "nav-link", data: {scroll: ''} %>
                 </li>
-              </ul>
-              <ul class="nav flex-column mb-2 mb-lg-0">
-                <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Terms &amp; Conditions</a></li>
-                <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Privacy Policy</a></li>
+                <li class="nav-item">
+                  <%= link_to "Blog", posts_path, class: "nav-link" %>
+                </li>
               </ul>
             </div>
           </div>
-          <div class="col-xl-4 col-lg-3">
-            <h6 class="mb-2">
-              <a href="#social-links" class="d-block text-dark dropdown-toggle d-lg-none py-2" data-bs-toggle="collapse">Socials</a>
-            </h6>
-            <div id="social-links" class="collapse d-lg-block" data-bs-parent="#footer-links">
-              <ul class="nav flex-column mb-2 mb-lg-0">
-                <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Facebook</a></li>
-                <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">LinkedIn</a></li>
-                <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Twitter</a></li>
-                <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Instagram</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xl-4 col-lg-5 pt-2 pt-lg-0">
-            <h6 class="mb-2">Contact Us</h6>
-            <a href="mailto:contact@outwesttech.com" class="fw-medium">contact@outwesttech.com</a>
+
+          <div class="col-6">
+            <ul class="nav flex-column mb-2 mb-lg-0">
+              <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Terms &amp; Conditions</a></li>
+              <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Privacy Policy</a></li>
+            </ul>
           </div>
         </div>
       </div>

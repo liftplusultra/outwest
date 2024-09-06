@@ -1,0 +1,15 @@
+<nav class="container pt-4 mt-lg-3" aria-label="breadcrumb">
+  <ol class="breadcrumb mb-0">
+    <li class="breadcrumb-item">
+      <%= link_to root_path do %>
+        <i class="bx bx-home-alt fs-lg me-1"></i>Home
+      <% end %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to posts_path do %>
+        All Posts
+      <% end %>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">This Post</li>
+  </ol>
+</nav>

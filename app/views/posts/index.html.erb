@@ -1,0 +1,101 @@
+<section class="container mt-4 mb-lg-5 pt-lg-2 pb-5">
+
+  <!-- Page title + Layout switcher -->
+  <div class="d-flex align-items-center justify-content-between mb-4 pb-1 pb-md-3">
+    <h1 class="mb-0">Business Blog</h1>
+  </div>
+
+  <!-- Blog grid + Sidebar -->
+  <div class="row">
+    <div class="col-xl-9 col-lg-8">
+      <div class="pe-xl-5">
+        <div class="row row-cols-sm-2 row-cols-1 g-4" data-masonry='{"percentPosition": true }' style="position: relative; overflow: hidden; transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1);">
+          <%= @posts.present? ? (render @posts) : empty_collection_message(Post) %>
+        </div>
+
+        <section class="mt-5">
+          <div class="card border-0 bg-gradient-primary">
+            <div class="card-body p-md-5 p-4 bg-size-cover" style="background-image: url('<%= image_path("contact-cta-bg.png") %>');">
+              <div class="py-md-5 py-4 text-center">
+                <h3 class="h4 fw-normal text-light opacity-75">Ready to get to work?</h3>
+                <h1 class="display-6 text-light">We're ready to work for you.</h1>
+                <div class="pt-md-5 pt-4 pb-md-2">
+                  <%= link_to "Contact Us Today", root_path(anchor: "contact"), class: "btn btn-lg btn-light" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+    <!-- Sidebar (Offcanvas below lg breakpoint) -->
+    <aside class="col-xl-3 col-lg-4">
+      <div class="offcanvas-lg offcanvas-end" id="blog-sidebar" tabindex="-1">
+
+        <!-- Header -->
+        <div class="offcanvas-header border-bottom">
+          <h3 class="offcanvas-title fs-lg">Sidebar</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#blog-sidebar" aria-label="Close"></button>
+        </div>
+
+        <!-- Body -->
+        <div class="offcanvas-body">
+
+          <!-- Search form -->
+          <%= form_with(url: posts_path, method: :get, class: "mb-4") do |form| %>
+            <div class="input-group">
+              <%= form.text_field :search, value: params[:search], placeholder: "Search posts", class: "form-control pe-5" %>
+              <button type="submit" class="btn btn-outline-secondary">
+                <i class="bx bx-search fs-lg"></i>
+              </button>
+            </div>
+          <% end %>
+
+          <!--          <form class="input-group mb-4">-->
+          <!--            <input type="text" placeholder="Search the blog..." class="form-control rounded pe-5">-->
+          <!--            <i class="bx bx-search position-absolute top-50 end-0 translate-middle-y me-3 fs-lg zindex-5"></i>-->
+          <!--          </form>-->
+
+          <!-- Categories -->
+          <div class="card card-body mb-4">
+            <h3 class="h5">Post Tags</h3>
+            <ul class="nav flex-column fs-sm">
+              <li class="nav-item mb-1 border-bottom">
+                <%= link_to "All Tags", posts_path, class: "nav-link py-1 px-0" %>
+              </li>
+              <% @tags.each do |tag| %>
+                <li class="nav-item mb-1">
+                  <%= link_to tag.label, posts_path(tag: tag.label), class: "nav-link py-1 px-0" %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+
+          <!-- Popular posts -->
+          <div class="card card-body border-0 position-relative mb-4">
+            <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary opacity-10 rounded-3"></span>
+            <div class="position-relative zindex-2">
+              <h3 class="h5">Featured Posts</h3>
+              <ul class="list-unstyled mb-0">
+                <% @featured_posts.each do |post| %>
+                <%= render partial: "posts/sidebar_featured_post", locals: {post: post} %>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+
+
+          <!-- Advertising -->
+          <%#= render partial: "posts/sidebar_cta" %>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<button type="button" data-bs-toggle="offcanvas" data-bs-target="#blog-sidebar" aria-controls="blog-sidebar" class="btn btn-sm btn-primary fixed-bottom d-lg-none w-100 rounded-0">
+  <i class="bx bx-sidebar fs-xl me-2"></i>
+  Sidebar
+</button>

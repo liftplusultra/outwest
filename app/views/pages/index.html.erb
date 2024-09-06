@@ -1,60 +1,5 @@
 <!-- Hero + animations -->
-<section class="position-relative d-flex align-items-center min-vh-100 py-5 bg-dark overflow-hidden">
-  <span class="position-absolute top-0 start-0 d-dark-mode-block d-none w-100 h-100 bg-secondary opacity-75"></span>
-  <div class="container position-relative mt-5 mb-lg-5 mb-md-4 mb-3 pt-3 pb-xl-3" data-bs-theme="dark">
-    <div class="row gy-5">
-      <div class="col-xl-5 col-lg-6">
-        <div class="position-relative zindex-5 text-lg-start text-center">
-          <h1 class="display-2 mb-4 pb-lg-3 pb-md-2">High impact <span class="text-primary">tech solutions</span>
-          </h1>
-          <p class="mb-4 pb-lg-3 pb-md-2">
-            <span class="me-2 text-light">Helping small businesses and startups achieve measurable success with custom tech solutions for any budget.</span>
-          </p>
-          <a href="#contact" data-scroll class="btn btn-lg btn-primary">Get started</a>
-        </div>
-      </div>
-      <div class="col-lg-6 offset-xl-1">
-        <div class="position-relative ms-xl-0 ms-lg-4">
-          <div class="position-absolute top-50 start-50 translate-middle ratio ratio-1x1" style="width: 125%; max-width: 49.75rem;">
-            <div class="p-md-0 p-5">
-              <%= image_tag "hero-bg.png", class: "hero-animation-spin p-md-0 p-5", alt: "Shape" %>
-            </div>
-          </div>
-          <div class="position-relative row row-cols-sm-2 row-cols-1 gx-xl-4 gx-lg-3 gx-md-4 gx-3">
-            <div class="col">
-              <div class="d-sm-grid d-flex gap-xl-4 gap-lg-3 gap-md-4 gap-sm-3 gap-2">
-                <div class="d-flex align-items-center justify-content-center bg-secondary rounded-3" style="min-height: 176px; backdrop-filter: blur(6px);">
-                  <div class="p-xl-4 p-sm-3 p-2 fs-xl fw-semibold text-center">
-                    <span class="hero-animation-fade text-white">I need custom software for my business</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center justify-content-center bg-secondary rounded-3" style="min-height: 176px; backdrop-filter: blur(6px);">
-                  <div class="p-xl-4 p-sm-3 p-2 fs-xl fw-semibold text-center">
-                    <span class="hero-animation-fade hero-animation-delay-2 text-white">We need to do more with less staff</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col mt-sm-5 mt-2 pt-sm-5">
-              <div class="d-sm-grid d-flex gap-xl-4 gap-lg-3 gap-md-4 gap-sm-3 gap-2">
-                <div class="d-flex align-items-center justify-content-center bg-secondary rounded-3" style="min-height: 176px; backdrop-filter: blur(6px);">
-                  <div class="p-xl-4 p-sm-3 p-2 fs-xl fw-semibold text-center">
-                    <span class="hero-animation-fade hero-animation-delay-1 text-white">I need a MVP for my startup</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center justify-content-center bg-secondary rounded-3" style="min-height: 176px; backdrop-filter: blur(6px);">
-                  <div class="p-xl-4 p-sm-3 p-2 fs-xl fw-semibold text-center">
-                    <span class="hero-animation-fade hero-animation-delay-3 text-white">I want to integrate AI into my business</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<%= render partial: "pages/hero" %>
 
 
 <!-- About -->
@@ -65,14 +10,13 @@
     </div>
     <div class="col-lg-5 col-md-6 offset-lg-1 d-flex">
       <div class="align-self-center ps-lg-0 ps-md-4">
-        <h2 class="h1 mb-lg-4 mb-3">Big tech for small business</h2>
+        <h2 class="h1 mb-lg-4 mb-3">Big tech for your business</h2>
         <p class="mb-3 fs-lg">
-          We believe that custom software, technology, and AI should be accessible to the hard-working people and
-          organizations that can benefit from it the most.
+          Technology is the engine that drives modern business success. We believe that innovative, high-quality tech
+          solutions should be accessible to organizations of all sizes, from startups to established enterprises.
         </p>
         <p class="mb-3 fs-lg">
-          Our goal is to empower small business owners and startup founders with affordable, state-of-the-art tech
-          solutions that drive growth and efficiency.
+          Our mission is to empower businesses by delivering tailored solutions that foster growth, efficiency, and a competitive edge in today’s market.
         </p>
 
         <%= link_to "More about us", about_path, class: "btn btn-lg btn-outline-primary" %>
@@ -81,312 +25,16 @@
   </div>
 </section>
 
-
-<!-- Solutions -->
-<section class="container mb-5 pb-lg-5 pb-md-4 pb-3" id="services">
-  <h2 class="h1 mb-lg-5 mb-4 pb-lg-0 pb-md-2 text-center">Our Services</h2>
-
-  <!-- Swiper slider -->
-  <div class="mb-xl-3">
-    <div class="row">
-
-      <!-- Swiper item -->
-      <div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
-        <div class="card h-100">
-          <div class="card-body my-md-5 my-4 py-xl-2 py-md-0 py-sm-2 text-center">
-            <%= image_tag "icons/01.svg", class: "d-block mb-3 mx-auto", alt: "Icon" %>
-            <h3 class="h5 mb-3">Software Development</h3>
-            <p class="mb-0">
-              Custom software for owners, staff, customers, or end-users. Own the software that drives your business,
-              boost engagement, and become more efficient.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Swiper item -->
-      <div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
-        <div class="card h-100">
-          <div class="card-body my-md-5 my-4 py-xl-2 py-md-0 py-sm-2 text-center">
-            <%= image_tag "icons/02.svg", class: "d-block mb-3 mx-auto", alt: "Icon" %>
-            <h3 class="h5 mb-3">App Development</h3>
-            <p class="mb-0">
-              Manage and monitor your team on the go while providing tools to make them self sufficient. Allow your
-              customers to use your services from anywhere and on any device.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Swiper item -->
-      <div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
-        <div class="card h-100">
-          <div class="card-body my-md-5 my-4 py-xl-2 py-md-0 py-sm-2 text-center">
-            <%= image_tag "icons/03.svg", class: "d-block mb-3 mx-auto", alt: "Icon" %>
-            <h3 class="h5 mb-3">Strategy</h3>
-            <p class="mb-0">
-              We offer expert product strategy and brainstorming services, helping small businesses and startups refine
-              their ideas and create actionable plans or create new revenue streams.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Swiper item -->
-      <div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
-        <div class="card h-100">
-          <div class="card-body my-md-5 my-4 py-xl-2 py-md-0 py-sm-2 text-center">
-            <%= image_tag "icons/04.svg", class: "d-block mb-3 mx-auto", alt: "Icon" %>
-            <h3 class="h5 mb-3">Operations</h3>
-            <p class="mb-0">
-              Streamline tasks, reduce manual work, and enhance overall performance. Smoother operations, cost savings,
-              and more time for you to focus on growing your business.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Swiper pagination -->
-    <div class="swiper-pagination position-static mt-4 pt-lg-3 pt-2"></div>
-  </div>
-</section>
+<%= render partial: "pages/featured_blog_posts", locals: {posts: @posts} %>
 
 
-<!-- Projects -->
-<section class="container mb-5 pb-lg-5 pb-md-4 pb-3">
-  <h2 class="h1 mb-lg-5 mb-4 pb-lg-0 pb-md-2 text-center">Explore Our Featured Projects</h2>
+<%= render partial: "pages/services" %>
 
-  <!-- Project item -->
-  <div class="row gy-4 mb-4 pb-md-3 pb-2">
-    <div class="col-md-6 rellax" data-rellax-percentage="0.5" data-rellax-speed="0.5" data-disable-parallax-down="md">
-      <div class="bg-secondary rounded-3">
-        <%= image_tag "projects/01.png" %>
-      </div>
-    </div>
-    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 offset-lg-1 d-flex rellax" data-rellax-percentage="0.5" data-rellax-speed="-0.5" data-disable-parallax-down="md">
-      <div class="align-self-center ps-lg-0 ps-md-4">
-        <h3 class="h2 mb-lg-4 mb-3">Camping gear rental startup</h3>
-        <h4 class="mb-lg-4 mb-3 fs-base fw-normal text-body">Startup MVP</h4>
-        <p class="mb-lg-4 mb-3">
-          We built an MVP for Cool Camp Rentals, a camping gear rental startup. This was a custom coded web app that
-          included
-          a customer facing front-end with an admin and staff accessible back-end for managing the internals of the
-          business.
-          Included was custom logic to ensure gear availability, a custom reservation system, tracking to identify which
-          gear
-          was most in-demand, and a backend for the owners and staff to manage inventory, orders, and customer
-          communication with much more under the hood.
-        </p>
-        <ul class="mb-lg-4 mb-3 fs-sm text-muted list-inline" style="max-width: 19.125rem;">
-          <li class="list-inline-item me-1">
-            Product Strategy
-            <span class="ms-1">/</span>
-          </li>
-          <li class="list-inline-item me-1">
-            Web Development
-            <span class="ms-1">/</span>
-          </li>
-          <li class="list-inline-item me-1">
-            Systems Design
-            <span class="ms-1">/</span>
-          </li>
-          <li class="list-inline-item me-1">
-            Operations
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<%= render partial: "pages/projects" %>
 
-  <!-- Project item -->
-  <div class="row gy-4 mb-4 pb-md-3 pb-2">
-    <div class="col-md-6 rellax" data-rellax-percentage="0.5" data-rellax-speed="0.5" data-disable-parallax-down="md">
-      <div class="bg-secondary rounded-3">
-        <%= image_tag "projects/02.png" %>
-      </div>
-    </div>
-    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 offset-lg-1 d-flex rellax" data-rellax-percentage="0.5" data-rellax-speed="-0.5" data-disable-parallax-down="md">
-      <div class="align-self-center ps-lg-0 ps-md-4">
-        <h3 class="h2 mb-lg-4 mb-3">Multi purpose dashboard for landscaping company</h3>
-        <h4 class="mb-lg-4 mb-3 fs-base fw-normal text-body">Responsive Web App</h4>
-        <p class="mb-lg-4 mb-3">
-          We built a custom web app for a landscaping provider to manage and assign work to techs in the field, manage
-          client projects, view important data, and generate business critical reports.
-          The Owner and admins can identify where every tech, truck, trailer, and piece of equipment was located at a
-          glance. Delegating resources to new jobs without conflicts went from a major chore that required a dedicated
-          employee to a few simple clicks allowing staff to focus on more important tasks.
-        </p>
-        <ul class="mb-lg-4 mb-3 fs-sm text-muted list-inline" style="max-width: 19.125rem;">
-          <li class="list-inline-item me-1">
-            Product Strategy
-            <span class="ms-1">/</span>
-          </li>
-          <li class="list-inline-item me-1">
-            Systems Design
-            <span class="ms-1">/</span>
-          </li>
-          <li class="list-inline-item me-1">
-            Web Development
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<%= render partial: "pages/why_use_us" %>
 
-  <!-- Project item -->
-  <div class="row gy-4 mb-xl-3">
-    <div class="col-md-6 rellax" data-rellax-percentage="0.5" data-rellax-speed="0.5" data-disable-parallax-down="md">
-      <div class="bg-secondary rounded-3">
-        <%= image_tag "projects/03.png" %>
-      </div>
-    </div>
-    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 offset-lg-1 d-flex rellax" data-rellax-percentage="0.5" data-rellax-speed="-0.5" data-disable-parallax-down="md">
-      <div class="align-self-center ps-lg-0 ps-md-4">
-        <h3 class="h2 mb-lg-4 mb-3">Account management portal for mens health</h3>
-        <h4 class="mb-lg-4 mb-3 fs-base fw-normal text-body">Responsive Web App</h4>
-        <p class="mb-lg-4 mb-3">
-          This was an account management app facilitating patient self service for a mens health center. Patients can
-          view invoices, discuss issues with providers, manage payment methods (including paying with crypto), and view
-          important notifications from their provider.
-        </p>
-        <ul class="mb-lg-4 mb-3 fs-sm text-muted list-inline" style="max-width: 19.125rem;">
-          <li class="list-inline-item me-1">
-            Web Development
-            <span class="ms-1">/</span>
-          </li>
-          <li class="list-inline-item me-1">
-            Systems Design
-            <span class="ms-1">/</span>
-          </li>
-          <li class="list-inline-item me-1">
-            Responsive Design
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="row justify-content-center pt-5">
-    <div class="col-12 text-center">
-      <p class="lead">Built using the following tech:</p>
-    </div>
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-git-plain"></i><br>Git</div>
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-github-original"></i><br>Github</div>
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-heroku-original"></i><br>Heroku</div>
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-ruby-plain"></i><br>Ruby</div>
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-rails-plain-wordmark"></i><br>Rails</div>
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-elixir-plain"></i><br>Elixir</div>
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-phoenix-plain"></i><br>Phoenix</div>
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-postgresql-plain"></i><br>Postgres</div>
-  </div>
-  <div class="row justify-content-center pb-5">
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-mongodb-plain"></i><br>MongoDB</div>
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-mysql-plain"></i><br>Mysql</div>
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-javascript-plain"></i><br>JS</div>
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-nodejs-plain"></i><br>Node</div>
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-html5-plain"></i><br>HTML</div>
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-css3-plain"></i><br>CSS</div>
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-bootstrap-plain"></i><br>Bootstrap</div>
-    <div class="pt-3 col-auto text-center"><i class="fs-1 devicon-tailwindcss-original-wordmark"></i><br>Tailwind</div>
-  </div>
-</section>
-
-
-<!-- Benefits -->
-<section class="container mb-lg-5 mb-4 pb-3">
-  <h2 class="h1 pb-lg-0 pb-md-2 text-center">Why use us for your project?</h2>
-  <p class="text-center lead mb-4">Here's what sets us apart</p>
-
-  <!-- Swiper slider -->
-  <div class="mb-xl-3 text-sm-start text-center" data-swiper-options>
-    <div class="row">
-
-      <!-- Swiper item -->
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="mt-3 mt-lg-0 mx-auto" style="max-width: 19.125rem;">
-          <div class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4">
-            <%= image_tag "features/01.svg", width: 32, alt: "Icon" %>
-          </div>
-          <h4 class="h5 mb-3">Prototype in 3 days</h4>
-          <p class="mb-0">
-            We get to work fast and will have something for you to click around and start using within 3 days after
-            getting started. We'll keep you updated on every change we make so you can use and test your product as it's
-            being built.
-          </p>
-        </div>
-      </div>
-
-      <!-- Swiper item -->
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="mt-3 mt-lg-0 mx-auto" style="max-width: 19.125rem;">
-          <div class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4">
-            <%= image_tag "features/02.svg", width: 32, alt: "Icon" %>
-          </div>
-          <h4 class="h5 mb-3">Demos in 3 weeks</h4>
-          <p class="mb-0">
-            It may still be rough around the edges and need some paint or design, but we'll have enough done for you to
-            start using base features and test real world scenarios in three weeks in most cases.
-          </p>
-        </div>
-      </div>
-
-      <!-- Swiper item -->
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="mt-3 mt-lg-0 mx-auto" style="max-width: 19.125rem;">
-          <div class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4">
-            <%= image_tag "features/03.svg", width: 32, alt: "Icon" %>
-          </div>
-          <h4 class="h5 mb-3">MVP in 2 months</h4>
-          <p class="mb-0">
-            Ready for use in two months based on our history and project size. Get your first customers, users, or staff
-            using your project in 2 months. This is the time for final changes, tweaks, and revisions as we near the
-            finish line.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="mt-3 mt-lg-0 mx-auto" style="max-width: 19.125rem;">
-          <div class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4">
-            <%= image_tag "features/04.svg", width: 32, alt: "Icon" %>
-          </div>
-          <h4 class="h5 mb-3">Constant contact</h4>
-          <p class="mb-0">
-            Unlike most agencies, we know what it's like to bootstrap a small local business or kick off a new startup
-            ourselves. Time and money are top-priority and maintaining constant contact is the only way to save on both.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="container my-5 py-lg-5 py-md-4 py-3">
-  <div class="row gy-4 py-xl-3">
-    <div class="col-md-6 col-lg-5 d-flex">
-      <div class="align-self-center ps-lg-0 ps-md-4">
-        <h2 class="h1 mb-lg-4 mb-3">Technology for your industry</h2>
-        <p class="mb-3 fs-lg">
-          We have a diverse background and experience with a wide range of industries, both professionally and as
-          hobbyists.
-        </p>
-        <p class="mb-3 fs-lg">
-          Almost everyone on our team has owned or currently owns a small business. From local service companies like
-          welding & fabrication to artisanal woodworking and pet care, we come from a diverse background.
-        </p>
-        <p class="mb-3 fs-lg">
-          Our team has an equally unique range of hobbies. From geeking out at the latest blockchain tech to building
-          off-road race trucks or baking pizzas from scratch, we're builders and creatives at heart.
-        </p>
-
-      </div>
-    </div>
-    <div class="col-md-6 offset-lg-1">
-      <%= image_tag "industries/02.jpg", class: "rounded-3", alt: "Tech for any industry" %>
-    </div>
-  </div>
-</section>
+<%= render partial: "pages/industries" %>
 
 <section class="container" id="contact">
   <div class="bg-secondary rounded-3 py-5 px-3 px-sm-4 px-lg-0">
@@ -394,12 +42,12 @@
       <div class="col-xl-4 col-lg-5 col-md-6 offset-lg-1 mb-4 pb-3 mb-md-0 pb-md-0">
         <h2 class="h1 mb-lg-4">Get in Touch</h2>
         <p class="pb-2 pb-md-4 pb-lg-5">
-          Have a project in mind? Let's talk about it.
+          Need a custom software solution or help managing your business growth? We can help! Contact us today.
         </p>
         <h3 class="mb-lg-4">Contact Info</h3>
         <ul class="list-unstyled pb-3 pb-md-4 pb-lg-5 mb-2">
           <li class="mb-2">
-            <a href="tel:4065550120" class="nav-link d-flex align-items-center p-0">
+            <a href="tel:4807437821" class="nav-link d-flex align-items-center p-0">
               <i class="bx bx-phone-call fs-xl text-primary me-2"></i>
               (480) 743-7821
             </a>
@@ -418,14 +66,6 @@
             </div>
           </li>
         </ul>
-        <p>
-          Due to the nature of how we work and our price point, we're a bit more selective in the projects we take on.
-          We prefer to work with hard working, smaller organizations and startups where the owners and stakeholders are
-          directly involved in the day to day operations.
-          <br>
-          <br>
-          If this sounds like you, or something close to it, we'd love to learn more!
-        </p>
       </div>
       <div class="col-lg-5 col-md-6 offset-xl-1">
         <div class="card border-0 shadow-sm p-sm-2">

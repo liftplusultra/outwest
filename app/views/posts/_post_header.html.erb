@@ -1,0 +1,9 @@
+<section class="container mt-4 pt-lg-2 pb-3">
+  <h1 class="pb-3" style="max-width: 970px;"><%= post.title %></h1>
+  <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
+    <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
+      <%= render partial: "posts/tags", locals: {post: @post} %>
+      <div class="fs-sm border-start border-end px-3 mx-3 mb-2"><%= post.updated_at.to_fs(:short_date) %></div>
+    </div>
+  </div>
+</section>

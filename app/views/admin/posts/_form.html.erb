@@ -1,0 +1,75 @@
+<%= form_with(model: [:admin, post]) do |form| %>
+  <div class="row">
+    <div class="col-lg-12 col-12">
+      <div class="card mb-6 shadow border-0">
+        <div class="card-body p-6">
+          <h4 class="mb-5 h5">Main Image</h4>
+
+          <div class="card card-body border-0 mb-3 p-0">
+            <div class="row">
+              <div class="col-12 justify-content-center d-flex" id="preview">
+                <% if post.header_image.representable? %>
+                  <%= image_tag(post.header_image, class: "rounded img-fluid page-image") %>
+                <% else %>
+                  No Image
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex">
+            <%= form.file_field :header_image, direct_upload: true, class: "btn" %>
+            <%= render partial: "shared/spinner", locals: { hidden: true } %>
+          </div>
+
+          <h4 class="mb-4 h5 mt-5">Post Details</h4>
+          <div class="row">
+            <div class="mb-3 col-lg-6">
+              <%= form.label "Publish", class: "form-label" %>
+              <div class="form-check form-switch mb-4">
+                <%= form.check_box :published, class: "form-check-input" %>
+                <%= form.label :published, "Published?", class: "form-check-label" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="mb-3 col-lg-6">
+              <%= form.label "Feature?", class: "form-label" %>
+              <div class="form-check form-switch mb-4">
+                <%= form.check_box :featured, class: "form-check-input" %>
+                <%= form.label :featured, "Featured?", class: "form-check-label" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="mb-3 col-lg-6">
+              <%= form.label "Tags", class: "form-label" %>
+              <%= form.collection_select :tag_ids, Tag.all, :id, :label, { multiple: true }, class: "form-select" %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="mb-3 col-lg-6">
+              <%= form.label :title, class: "form-label" %>
+              <%= form.text_field :title, class: "form-control" %>
+            </div>
+
+            <div></div>
+            <div class="mb-3 col-lg-12">
+              <label class="form-label">Content</label>
+              <%#= form.hidden_field :content, value: post.content, data: { post_form_target: "hiddenInput" } %>
+              <%= form.rich_text_area :content, style: "height: 300px; overflow-y: auto;" %>
+            </div>
+
+            <div class="col-lg-12">
+              <%= link_to "Cancel", admin_posts_path, class: "btn btn-secondary" %>
+              <%= form.submit "Save", class: "btn btn-primary ms-2" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

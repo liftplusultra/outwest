@@ -1,0 +1,67 @@
+<% content_for :nav_links do %>
+  <ul class="navbar-nav flex-column" id="sideNavbar">
+    <li class="nav-item">
+      <a class="nav-link <%= "active" if controller_name == "dashboard" %>" href="/admin">
+        <div class="d-flex align-items-center">
+          <span class="nav-link-icon"><i class="bi bi-house"></i></span>
+          <span class="nav-link-text">Dashboard</span>
+        </div>
+      </a>
+    </li>
+
+    <li class="nav-item mt-6 mb-3">
+      <span class="nav-label">Blog Posts</span>
+    </li>
+
+    <li class="nav-item">
+      <%= link_to admin_posts_path, class: "nav-link #{"bg-secondary-subtle" if controller_name == "posts"}" do %>
+        <div class="d-flex align-items-center">
+          <span class="nav-link-icon"><i class="bi bi-person"></i></span>
+          <span class="nav-link-text">All Posts</span>
+        </div>
+      <% end %>
+    </li>
+
+    <li class="nav-item mt-6 mb-3">
+      <span class="nav-label">Tags</span>
+    </li>
+
+    <li class="nav-item">
+      <%= link_to admin_tags_path, class: "nav-link #{"bg-secondary-subtle" if controller_name == "tags"}" do %>
+        <div class="d-flex align-items-center">
+          <span class="nav-link-icon"><i class="bi bi-tag"></i></span>
+          <span class="nav-link-text">All Tags</span>
+        </div>
+      <% end %>
+    </li>
+  </ul>
+<% end %>
+
+<nav class="navbar-vertical-nav d-none d-xl-block">
+  <div class="navbar-vertical">
+    <div class="px-4 py-5 d-flex justify-content-center">
+      <%= link_to admin_path, class: "d-flex navbar-brand" do %>
+        <%= image_tag("logo-blk.png", width: 47) %>
+        <h4 class="my-auto ms-2">Out West Tech</h4>
+      <% end %>
+    </div>
+
+    <div class="navbar-vertical-content flex-grow-1 pb-18">
+      <%= yield :nav_links %>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar-vertical-nav offcanvas offcanvas-start navbar-offcanvac" tabindex="-1" id="offcanvasExample">
+  <div class="navbar-vertical">
+    <div class="px-4 py-5 d-flex justify-content-between align-items-center">
+      <%= link_to admin_path, class: "navbar-brand mx-auto" do %>
+        <%= image_tag("logo-blk.png", width: 47) %>
+      <% end %>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="navbar-vertical-content flex-grow-1">
+      <%= yield :nav_links %>
+    </div>
+  </div>
+</nav>

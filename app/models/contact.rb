@@ -3,8 +3,9 @@ class Contact < ApplicationRecord
     "Custom Software Development",
     "Software Integrations",
     "Mobile App Development",
-    "Strategy",
-    "Operations",
+    "Strategy Consulting",
+    "Business Analytics",
+    "Operations Consulting",
     "Something else"
   ].freeze
 

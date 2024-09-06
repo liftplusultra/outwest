@@ -12,7 +12,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 # gem "redis", ">= 4.0.1"
 # gem "kredis"
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
 
 gem "rack-cors"
 gem "recaptcha"
@@ -20,6 +20,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem "interactor"
 gem "twilio-ruby"
 gem "hubspot-api-client"
+gem "aws-sdk-s3", require: false
+gem 'friendly_id', '~> 5.5.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
@@ -28,7 +30,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
