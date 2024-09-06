@@ -51,9 +51,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a href="#contact" data-scroll class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex" target="_blank" rel="noopener">
+    <%= link_to root_path(anchor: "contact"), class: "btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex" do %>
       <i class="bx bx-message-alt-dots fs-5 lh-1 me-1"></i>
       Contact Us
-    </a>
+    <% end %>
   </div>
 </header>
