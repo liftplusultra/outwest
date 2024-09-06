@@ -1,4 +1,5 @@
-<% content_for :description, @post.title %>
+<% content_for :title, @post.title %>
+<% content_for :description, truncate(strip_tags(@post.content.to_s), length: 120) %>
 <% content_for :meta_image, url_for(@post.header_image.url) %>
 <%= render partial: "posts/post_crumbs" %>
 <%= render partial: "posts/post_header", locals: {post: @post} %>
