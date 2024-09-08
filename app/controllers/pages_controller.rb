@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @posts = Post.with_all_rich_text.preload(:tags).published
+    @posts = Post.with_all_rich_text.preload(:tags).published.featured
   end
 
   def about
