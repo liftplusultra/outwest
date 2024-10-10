@@ -39,6 +39,15 @@ class Contact < ApplicationRecord
       api_response = api_client.crm.contacts.basic_api.create(body: body)
       puts api_response
       api_response
+
+      NotificationMailer.new_contact(
+        email: params[:email],
+        first_name: params[:first_name],
+        last_name: params[:last_name],
+        service: params[:service],
+        message: params[:message]
+      ).deliver_now
+
     rescue Hubspot::Crm::Contacts::ApiError => e
       puts "Exception when calling HubSpot API: #{e}"
       return false
