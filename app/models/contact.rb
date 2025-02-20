@@ -1,5 +1,6 @@
 class Contact < ApplicationRecord
   SERVICES = [
+    "Anti-Fraud & Abuse for Seniors",
     "Custom Software Development",
     "Software Integrations",
     "Mobile App Development",

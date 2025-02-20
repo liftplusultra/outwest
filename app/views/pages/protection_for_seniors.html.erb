@@ -1,0 +1,142 @@
+<nav class="container py-4 mb-md-2 mb-lg-5 mt-lg-3" aria-label="breadcrumb">
+  <ol class="breadcrumb mb-0">
+    <li class="breadcrumb-item">
+      <%= link_to root_path do %>
+        <i class="bx bx-home-alt fs-lg me-1"></i>Home
+      <% end %>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Anti-Fraud & Abuse for Seniors</li>
+  </ol>
+</nav>
+
+<section class="container py-5 mb-md-2 mb-lg-4 mb-xl-5">
+  <div class="row pb-5 mb-md-2 mb-lg-4 mb-xl-5">
+    <div class="col-lg-6">
+      <h1 class="display-2 mb-0">Don't be a Victim.</h1>
+    </div>
+    <div class="col-lg-6 col-xl-5 offset-xl-1 pt-3 pt-sm-4 pt-lg-3">
+      <p class="fs-xl pb-4 mb-1 mb-md-2 mb-xl-3">
+        Identity theft, fraud, and scams targeting seniors are at an all time high. Take action to prevent you or your loved ones from being a victim.
+      </p>
+      <%= link_to "Get Protected", root_path(anchor: "contact", service: Contact::SERVICES[0]), class: "btn btn-lg btn-primary shadow-primary" %>
+    </div>
+  </div>
+  <hr>
+</section>
+
+<section class="container pb-sm-1 pb-md-3">
+
+  <!-- Row 1 -->
+  <div class="row align-items-lg-center pb-5 mb-2 mb-lg-4 mb-xl-5">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <%= image_tag "couple.jpg", class: "rounded-3" %>
+    </div>
+    <div class="col-md-6">
+      <div class="ps-xl-5 ms-md-2 ms-lg-4">
+        <h2 class="h1 mb-3 mb-sm-4">$61.5 Billion Dollars</h2>
+        <p class="mb-4 mb-lg-5">
+          That's how much money the FTC estimates is stolen or scammed from seniors each year.
+          From identity theft and social security scams to local home service providers overcharging or lying about "necessary" repairs, our seniors are constantly under attack.
+        </p>
+        <p class="mb-4 mb-lg-5">
+          With our protection and guidance, we can ensure your assets are not added to that number.
+        </p>
+        <%= link_to "Contact Us for Help", root_path(anchor: "contact", service: Contact::SERVICES[0]), class: "btn btn-lg btn-primary shadow-primary" %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="row align-items-lg-center pt-md-3 pb-5 mb-2 mb-lg-4 mb-xl-5">
+    <div class="col-md-6 order-md-2 mb-4 mb-md-0 d-flex">
+      <%= image_tag "training.jpg", class: "rounded-3 my-auto" %>
+    </div>
+    <div class="col-md-6 order-md-1">
+      <div class="pe-xl-5 me-md-2 me-lg-4">
+        <h2 class="h1 mb-3 mb-sm-4">We Can Help and Protect You</h2>
+        <p class="mb-3 mb-sm-4">
+          We have an in-depth program to identify your current level of risk, secure your accounts, and keep you protected.
+        </p>
+        <ul class="list-unstyled mb-0">
+          <li class="d-flex mb-2">
+            <i class="bx bx-check text-primary lead me-2"></i>
+            Prevent the onslaught of nonstop scam calls ringing your phone
+          </li>
+          <li class="d-flex mb-2">
+            <i class="bx bx-check text-primary lead me-2"></i>
+            Scan your data to identify if you've been effected by data breaches
+          </li>
+          <li class="d-flex mb-2">
+            <i class="bx bx-check text-primary lead me-2"></i>
+            Implement smart password settings and security management
+          </li>
+          <li class="d-flex mb-2">
+            <i class="bx bx-check text-primary lead me-2"></i>
+            Assist with freezing credit to prevent fraud
+          </li>
+          <li class="d-flex mb-2">
+            <i class="bx bx-check text-primary lead me-2"></i>
+            Provide a home service concierge program of honest, trusted home service providers
+          </li>
+          <li class="d-flex mb-2">
+            <i class="bx bx-check text-primary lead me-2"></i>
+            Provide a hotline for live help if you're ever worried you might be getting scammed
+          </li>
+          <li class="d-flex mb-2">
+            <i class="bx bx-check text-primary lead me-2"></i>
+            Ongoing help and guidance to keep your assets safe
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="overflow-hidden pt-md-2 pt-lg-3 pb-3 pb-md-4 pb-xl-5">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row flex-md-nowrap align-items-start">
+      <div class="col-md-7 ps-0 pe-lg-4 mb-5 mb-md-0">
+        <div style="max-width: 660px;">
+          <h2 class="h1 pb-3 mb-2 mb-md-3">Here's the Facts</h2>
+          <div class="row row-cols-1 row-cols-sm-2 gx-lg-5 g-4">
+            <div class="col pt-1 pt-sm-2 pt-lg-3">
+              <i class="bx bxs-user-account d-block fs-2 text-primary mb-2 mb-sm-3"></i>
+              <h3 class="h5 pb-sm-1 mb-2">Identity theft is the #1 reported fraud among adults 60 and older, accounting for 39% of all fraud complaints.</h3>
+<!--              <p class="mb-0">On average, a new data breach occurs every 8 minutes.</p>-->
+            </div>
+            <div class="col pt-1 pt-sm-2 pt-lg-3">
+              <i class="bx bxs-pie-chart d-block fs-2 text-primary mb-2 mb-sm-3"></i>
+              <h3 class="h5 pb-sm-1 mb-2">Over 80% of Americans have had their personal information exposed in a data breach at some point.</h3>
+            </div>
+            <div class="col pt-1 pt-sm-2 pt-lg-3">
+              <i class="bx bxs-bell-off d-block fs-2 text-primary mb-2 mb-sm-3"></i>
+              <h3 class="h5 pb-sm-1 mb-2">Senior financial abuse is vastly underreported. For every reported case, an estimated 44 others go unreported</h3>
+            </div>
+            <div class="col pt-1 pt-sm-2 pt-lg-3">
+              <i class="bx bx-refresh d-block fs-2 text-primary mb-2 mb-sm-3"></i>
+              <h3 class="h5 pb-sm-1 mb-2">The most frequently reported scams include home service fraud, confidence/romance scams, and investment fraud.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= image_tag "smartphone.jpg", class: "ms-3 ms-sm-5 ms-xl-3", width: "836" %>
+<!--      <img src="assets/img/services/single/dashboard.png" width="836" class="ms-3 ms-sm-5 ms-xl-3" alt="Dashboard">-->
+    </div>
+  </div>
+</section>
+
+<!--<div class="row">-->
+<!--  <div class="col-12 col-md-8 offset-md-2 text-center">-->
+<!--    <p class="lead"> </p>-->
+<!--  </div>-->
+<!--</div>-->
+
+<section class="position-relative bg-dark py-5">
+  <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255, 255, 255, .05)"></span>
+  <div class="container position-relative zindex-5 text-center my-xl-3 py-1 py-md-4 py-lg-5">
+    <p class="lead text-light opacity-70 pb-4">Don’t wait until it’s too late! Once your identity is stolen of fraud has occurred, it can take months—or even years—to fully recover, costing you money, stress, and endless headaches.</p>
+    <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">Be Proactive, Get Protected Today</h2>
+
+    <%= link_to "Contact Us to Get Scheduled", root_path(anchor: "contact", service: Contact::SERVICES[0]), class: "btn btn-lg btn-primary shadow-primary" %>
+  </div>
+</section>

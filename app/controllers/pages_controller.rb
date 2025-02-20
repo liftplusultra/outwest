@@ -23,4 +23,8 @@ class PagesController < ApplicationController
 
   def operations_consulting
   end
+
+  def protection_for_seniors
+
+  end
 end

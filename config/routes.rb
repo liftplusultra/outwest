@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   get "/about", to: "pages#about", as: :about
   get "/admin", to: "admin/dashboard#show", as: :admin
+  get "/protection-for-seniors", to: "pages#protection_for_seniors", as: :protection_for_seniors
 
   root "pages#index"
 end

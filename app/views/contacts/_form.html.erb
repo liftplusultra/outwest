@@ -2,7 +2,7 @@
   <%= form_with scope: :contact, url: contacts_path, class: "card-body needs-validation", id: "contact-form", data: { controller: "validate-form", validate_form_target: "form", validate_form_spinner_value: "true" } do |f| %>
     <div class="mb-4">
       <%= f.label :service, class: "form-label fs-base" %>
-      <%= f.select :service, Contact::SERVICES, { prompt: "Choose the service your interested in" }, class: "form-select form-select-lg", data: { validate_form_target: "input", validate_type: "text", validate_msg: "Please select a service." } %>
+      <%= f.select :service, Contact::SERVICES, { prompt: "Choose the service your interested in", selected: params[:service] }, class: "form-select form-select-lg", data: { validate_form_target: "input", validate_type: "text", validate_msg: "Please select a service." } %>
     </div>
     <div class="mb-4">
       <%= f.label :first_name, "First name", class: "form-label fs-base" %>
@@ -18,7 +18,7 @@
     </div>
     <div class="mb-4 pb-2">
       <%= f.label :message, class: "form-label fs-base" %>
-      <%= f.text_area :message, rows: 3, class: "form-control form-control-lg", placeholder: "Tell us a little about your project", data: { validate_form_target: "input", validate_type: "text", validate_msg: "Please leave us a brief message." } %>
+      <%= f.text_area :message, rows: 3, class: "form-control form-control-lg", placeholder: "Please leave us a brief message.", data: { validate_form_target: "input", validate_type: "text", validate_msg: "Please leave us a brief message." } %>
     </div>
 
     <div id="g-recaptcha"></div>

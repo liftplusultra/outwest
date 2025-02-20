@@ -42,7 +42,7 @@
       <div class="col-xl-4 col-lg-5 col-md-6 offset-lg-1 mb-4 pb-3 mb-md-0 pb-md-0">
         <h2 class="h1 mb-lg-4">Get in Touch</h2>
         <p class="pb-2 pb-md-4 pb-lg-5">
-          Need a custom software solution or help managing your business growth? We can help! Contact us today.
+          Reach out to us today! We will get your message and always respond to any inquires we receive.
         </p>
         <h3 class="mb-lg-4">Contact Info</h3>
         <ul class="list-unstyled pb-3 pb-md-4 pb-lg-5 mb-2">
@@ -58,13 +58,6 @@
               contact@outwesttech.com
             </a>
           </li>
-          <li class="mb-2">
-            <div class="nav-link d-flex align-items-center p-0">
-              <i class="bx bx-map fs-xl text-primary me-2"></i>
-              500 N. Estrella Pkwy STE #B2-251
-              Goodyear, Arizona 85338
-            </div>
-          </li>
         </ul>
       </div>
       <div class="col-lg-5 col-md-6 offset-xl-1">
@@ -77,3 +70,28 @@
     </div>
   </div>
 </section>
+
+<!-- Modal markup -->
+<div class="modal fade" tabindex="-1" role="dialog" id="onload">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+<!--        <h5 class="modal-title">Modal title</h5>-->
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="lead">Looking for our Anti-Fraud & Abuse Program for Seniors?</p>
+        <%= link_to "Click Here", protection_for_seniors_path, class: "btn btn-lg btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    window.onload = () => {
+        setTimeout(()=>{
+            const myModal = new bootstrap.Modal('#onload');
+            myModal.show();
+        }, 500)
+    }
+</script>
